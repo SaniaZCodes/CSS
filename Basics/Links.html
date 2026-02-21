@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Luxury Navigation Menu</title>
+        <style>
+            body 
+            {
+                background-color: #1a1a1a;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+            .nav-bar 
+            {
+                background-color: #262626;
+                padding: 20px 40px;
+                border-radius: 50px;
+                box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+                border: 1px solid #333;
+            }
+            .nav-bar a 
+            {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: 600;
+                text-decoration: none; 
+                margin: 0 25px;
+                font-size: 18px;
+                display: inline-block;
+                transition: all 0.3s ease; 
+            }
+            .nav-bar a:link 
+            {
+                color: #d4af37;
+            }
+            .nav-bar a:visited 
+            {
+                color: #8e762a;
+            }
+            .nav-bar a:hover 
+            {
+                color: #ffffff;
+                transform: scale(1.1);
+                text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            }
+            .nav-bar a:active 
+            {
+                transform: translateY(3px) scale(0.95);
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav-bar">
+            <a href="https://www.rolex.com" target="_blank">Rolex</a>
+            <a href="https://www.apple.com" target="_blank">Apple</a>
+            <a href="https://www.google.com" target="_blank">Google</a>
+            <a href="https://www.github.com" target="_blank">GitHub</a>
+        </div>
+    </body>
+</html>
