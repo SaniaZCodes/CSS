@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <title>Tech Gallery 2026</title>
+    <style>
+        /* General Page Styling */
+        body 
+        {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* --- NAVIGATION BAR --- */
+        nav {
+            background-color: #2c3e50;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav ul 
+        {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Standard Links */
+        nav li a 
+        {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            transition: background 0.3s;
+        }
+
+        nav li a:hover 
+        {
+            background-color: #34495e;
+            color: #f1c40f; /* Gold text on hover */
+        }
+
+        /* Dropdown Logic */
+        .dropdown 
+        {
+            position: relative;
+        }
+
+        .dropdown-content 
+        {
+            display: none;
+            position: absolute;
+            background-color: #2c3e50;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 10;
+            padding: 0;
+        }
+
+        .dropdown:hover .dropdown-content 
+        {
+            display: block;
+        }
+
+        .dropdown-content li a 
+        {
+            padding: 12px 20px;
+            border-bottom: 1px solid #3e4f5f;
+        }
+
+        /* --- IMAGE GALLERY --- */
+        .gallery-container 
+        {
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        img 
+        {
+            opacity: 0.6;
+            transition: 0.4s;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        img:hover 
+        {
+            opacity: 1.0;
+            transform: scale(1.1) translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Attribute Selector: Tech Images */
+        img[data-type="tech"] 
+        {
+            border: 5px solid #007bff;
+        }
+
+        /* --- SOCIAL SPRITES --- */
+        .social-box 
+        {
+            text-align: center;
+            padding: 20px;
+            background: #ddd;
+            margin: 20px 0;
+        }
+
+        .icon 
+        {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            margin: 0 10px;
+            background-image: url('https://i.imgur.com/v8p0m7u.png');
+            transition: transform 0.2s;
+        }
+
+        .icon:hover 
+        {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .fb 
+        { 
+            background-position: 0 0; 
+        }
+        .tw 
+        { 
+            background-position: -50px 0; 
+        }
+        .ig 
+        { 
+            background-position: -100px 0; 
+        }
+
+        /* --- FORM STYLING --- */
+        .form-section 
+        {
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        input 
+        {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Attribute Selector: Password */
+        input[type="password"] 
+        {
+            background-color: #ffeeba;
+        }
+
+        button 
+        {
+            padding: 10px 30px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover 
+        {
+            background-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Gallery ▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Nature</a></li>
+                    <li><a href="#">Architecture</a></li>
+                    <li><a href="#">Tech</a></li>
+                </ul>
+            </li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="gallery-container">
+        <img src="https://picsum.photos/id/10/200/200" data-type="nature" alt="Nature 1">
+        <img src="https://picsum.photos/id/11/200/200" data-type="nature" alt="Nature 2">
+        <img src="https://picsum.photos/id/1/200/200" data-type="tech" alt="Tech 1">
+        <img src="https://picsum.photos/id/2/200/200" data-type="tech" alt="Tech 2">
+    </div>
+
+    <div class="social-box">
+        <h3>Follow Us</h3>
+        <a href="#" class="icon fb"></a>
+        <a href="#" class="icon tw"></a>
+        <a href="#" class="icon ig"></a>
+    </div>
+
+    <div class="form-section">
+        <h3>Member Login</h3>
+        <form>
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+</body>
+</html>
