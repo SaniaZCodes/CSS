@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>The Accessible Tech Portal</title>
+        <style>
+            :root
+            {
+                --primary-color: #2c3e50;
+                --accent-color: #e74c3c;
+            }
+            body
+            {
+                font-family: system-ui, -apple-system, sans-serif;
+            } 
+            .main-container
+            {
+                display: flex;
+                gap: 20px;
+            }
+            .info-sidebar
+            {
+                width: calc(30% - 20px);
+            }
+            .content-area
+            {
+                width: 70%;
+            }
+            .feature-card
+            {
+                width: clamp(150px, 25%, 300px);
+            }
+            p
+            {
+                color:gray;
+            }
+            .feature-card p
+            {
+                color:blue
+            }
+            header
+            {
+                background-color:var(--primary-color);
+                padding: 10px;
+            }
+            nav ul
+            {
+                display: flex;
+                list-style: none;  
+                gap: 20px;
+            }
+            nav a
+            {
+                color: white;
+                text-decoration: none;
+            }
+            a:focus
+            {
+                outline: 3px solid orange; 
+                outline-offset: 4px;
+            }
+            #footer-text
+            {
+                color: green;
+            }
+            .danger-text
+            {
+                color: red !important;
+            }
+            .card-wrapper
+            {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            .feature-card
+            {
+                background-color: #eee;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="main-container">
+            <aside class="info-sidebar">
+                <h3>Quick Stats</h3>
+                <p>User growth is 25%.</p>
+            </aside>
+            <main class="content-area">
+                <h1>Future of Tech</h1>
+                <section class="card-wrapper">
+                <div class="feature-card">
+                    <p>Feature Description</p>
+                </div>
+                <div class="feature-card">
+                    <p>Feature Description</p>
+                </div>
+                <div class="feature-card">
+                    <p class="danger-text">Feature Description</p>
+                </div>
+            </section>
+            </main>
+        </div>
+        <footer>
+            <p id="footer-text">© 2026 Optimized Portal</p>
+        </footer>
+    </body>
+</html>
