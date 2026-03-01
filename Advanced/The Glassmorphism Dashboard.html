@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Glassmorphism Dashboard</title>
+        <style>
+            .dashboard-bg
+            {
+                min-height: 100vh;
+                display: flex; 
+                flex-direction: column; 
+                align-items: center; 
+                justify-content: center;
+                background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/id/192/1200/800');
+                background-size: cover; 
+                background-attachment: fixed;
+            }
+            h1
+            {
+                color: white;
+                font-size: 3rem;
+                text-shadow:3px 3px 10px #e74c3c;
+            }
+            button
+            {
+                border: none; 
+                color: white; 
+                padding: 10px 30px; 
+                cursor: pointer;
+                background-image:linear-gradient(to right, #e74c3c, #c0392b);
+                border-radius: 50px 0px 50px 0px;
+            }
+            .hero-card
+            {
+                width: 500px; 
+                padding: 40px; 
+                text-align: center; 
+                color: white;
+                background: rgba(255, 255, 255, 0.1);
+                border:1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+                backdrop-filter: blur(10px);
+            }
+            .stats-panel 
+            {
+                width: 280px; 
+                height: auto; 
+                margin-top: 25px; 
+                padding: 20px;
+                border: 3px solid rgba(255, 255, 255, 0.2); 
+                border-radius: 15px;
+                background: rgba(44, 62, 80, 0.2); 
+                backdrop-filter: blur(8px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+            }
+            .stats-panel h3 
+            {
+                margin: 0 0 10px 0;
+                font-size: 1.2rem;
+                color: var(--accent-color); 
+                text-shadow: 0 0 10px #e74c3c; 
+            }
+            .stats-panel p 
+            {
+                margin: 0;
+                font-size: 1rem;
+                color: rgba(255, 255, 255, 0.9); 
+            }
+            .pulsing-icon 
+            {
+                width: 90px;
+                height: 90px;
+                margin-top: 25px;
+                border-radius: 50%;
+                background-image: radial-gradient(circle, #e74c3c, #2c3e50); 
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: bold;
+                font-size: 1.5rem;
+                position: relative;
+                box-shadow: 0 0 25px #e74c3c; 
+            }
+            .pulsing-icon 
+            {
+                animation: icon-pulse 1.8s infinite ease-in-out;
+            }
+            @keyframes icon-pulse 
+            {
+                0% { transform: scale(1); box-shadow: 0 0 25px #e74c3c; }
+                50% { transform: scale(1.05); box-shadow: 0 0 35px #e74c3c; }
+                100% { transform: scale(1); box-shadow: 0 0 25px #e74c3c; }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="dashboard-bg">
+            <h1>Premium Tech Console.</h1>
+            <div class="hero-card">
+                <h2>Welcome back, User</h2>
+                <p>Your system is running at 98% efficiency. All security protocols are active and the advanced CSS visual engine is fully engaged for 2026 operations.</p>
+                <button>System Overdrive</button>
+            </div>
+            <div class="stats-panel image-frame">
+                <h3>Network Status</h3>
+                <p>All nodes report as optimal.</p>
+            </div>
+            <div class="pulsing-icon custom-bg-box">
+                <span>AI</span>
+            </div>
+        </div>
+    </body>
+</html>
