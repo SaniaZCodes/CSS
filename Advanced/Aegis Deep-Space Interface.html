@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aegis Deep-Space Interface</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+            body 
+            {
+                font-family: 'Orbitron', sans-serif;
+                background-color: #050505; 
+                color: #ffffff;
+                margin: 0;
+                padding: 20px;
+            }
+            @keyframes  glitch
+            {
+                0%{letter-spacing: 2px}
+                50%{letter-spacing: 8px}
+                100%{letter-spacing: 2px}
+            }
+            header h1
+            {
+                color: transparent;
+                -webkit-text-stroke: 1.5px #00ffcc;
+                text-shadow: 0 0 15px rgba(0, 255, 204, 0.8);
+                animation: glitch 3s infinite linear;
+            }
+            .status-panel p
+            {
+                background-color: #111;
+                border-left: 4px solid #00ffcc;
+                padding: 15px;
+                transform: skewX(-15deg);
+            }
+            .status-panel
+            {
+                perspective: 1000px;
+            }
+            form
+            {
+                background: #1a1a1a;
+                padding: 20px;
+                border: 1px solid #00ffcc;
+                transition: transform 0.5s ease;
+            }
+            form:hover
+            {
+                transform: rotateY(25deg) rotateX(10deg);
+            }
+            @keyframes spin3d
+            {
+                from { transform: rotateY(0deg); }
+                to { transform: rotateY(360deg); }
+            }
+            aside
+            {
+                animation: spin3d 10s infinite linear;
+            }
+            button
+            {
+                background: #00ffcc;
+                color: #000;
+                border: none;
+                padding: 10px 20px;
+                transition: 0.3s;
+            }
+            button:hover
+            {
+                transform: scale(1.2);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>AEGIS-OS_v2.4</h1>
+        </header>
+        <main>
+            <section class="status-panel">
+                <p>CRITICAL ALERT: Dark matter storm detected in the Orion Nebula. Hull integrity is fluctuating. Crew is advised to secure all 3D-printed modules and await captain's authorization.</p>
+                <form>
+                    <fieldset>
+                        <legend>
+                        <label for="Pilot ID">NEURAL LINK ID:</label><br>
+                        <input type="text" placeholder=" Hash-8821..."><br><br>
+                        <label for="Ship Mode">FLIGHT MODE:</label><br>
+                        <select>
+                            <option>Stealth</option>
+                            <option>Warp</option>
+                            <option>Combat</option>
+                        </select>
+                        <button type="submit">INITIALIZE SYSTEM</button>
+                    </legend>
+                    </fieldset>
+                </form>
+            </section>
+            <aside>
+                <h3>LIVE TELEMETRY</h3>
+                <ul>
+                    <li>Fuel: 10%</li>
+                    <li>Shield: 92%</li>
+                    <li>ETA: 4mins</li>
+                </ul>
+            </aside>
+        </main>
+    </body>
+</html>
