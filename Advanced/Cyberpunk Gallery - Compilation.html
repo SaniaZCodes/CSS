@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Gallery - Compilation</title>
+    
+    <style>
+        /* Centering the gallery-container */
+        .gallery-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1a1a1a; /* Dark background for theme */
+            margin: 0;
+        }
+
+        /* Image Wrapper setup for Tooltip */
+        .image-wrapper {
+            position: relative; /* Essential for absolute positioning of tooltip */
+            cursor: pointer;
+            margin: 0;
+        }
+
+        /* Image Shapes: Making it a 300px Circle */
+        .main-img {
+            width: 300px;
+            height: 300px;
+            border: 4px solid #00ffcc;
+            border-radius: 50%; /* border-radius: 50% turns a square into a circle */
+            
+            /* object-fit: cover ensures the image fills the circle without stretching */
+            object-fit: cover; 
+            
+            /* Initial Filter: grayscale 100% makes it Black & White */
+            filter: grayscale(100%);
+            transition: 0.4s ease;
+        }
+
+        /* Image Filters: Hover State */
+        .image-wrapper:hover .main-img {
+            filter: grayscale(0%) brightness(1.2); /* Removes grayscale and brightens image */
+        }
+
+        /* Tooltip Style: Hidden by default */
+        .tooltip-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 255, 204, 0.9);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            opacity: 0; /* Hidden */
+            transition: 0.3s ease;
+            pointer-events: none; /* Prevents tooltip from blocking clicks */
+            white-space: nowrap;
+        }
+
+        /* Tooltip Hover State: Set opacity to 1 */
+        .image-wrapper:hover .tooltip-text {
+            opacity: 1;
+        }
+
+        /* Modal Styling: Fixed to screen */
+        .modal {
+            position: fixed; /* position: fixed keeps it on screen even if you scroll */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9); /* Transparent black background */
+            display: none; /* Initial state: hidden */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-img {
+            max-width: 90%; /* Responsive sizing */
+            max-height: 80%;
+            border: 3px solid #00ffcc;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 60px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="gallery-container">
+
+        <figure class="image-wrapper">
+            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f" alt="Retro computer setup" class="main-img">
+            <span class="tooltip-text">View Fullscreen</span>
+        </figure>
+
+    </section>
+
+    <div id="imageModal" class="modal">
+        <span class="close-btn">&times;</span>
+        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f" alt="Retro computer setup" class="modal-img">
+    </div>
+
+    <script>
+        // Selecting the elements
+        const modal = document.getElementById("imageModal");
+        const mainImg = document.querySelector(".main-img");
+        const closeBtn = document.querySelector(".close-btn");
+
+        // Open Modal: When circular image is clicked
+        mainImg.onclick = function() {
+            modal.style.display = "flex"; // Changes from 'none' to 'flex'
+        }
+
+        // Close Modal: When the 'X' is clicked
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Extra: Close modal if user clicks the dark background area
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
