@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Responsive Data Archive</title>
+        <style>
+            :root
+            {
+                --main-bg: #050505;
+                --neon-color: #ff0055;
+                --text-gray: #b0b0b0;
+            }
+            .archive-wrapper
+            {
+                background-color: var(--main-bg);
+                color: white;
+                padding: 40px;
+                box-sizing: border-box; 
+            }
+            .content-columns
+            {
+                column-count: 3;
+                column-gap: 40px;
+                column-rule: 2px solid var(--neon-color);
+            }
+            .user-input
+            {
+                resize: vertical;
+                width: 100%;
+                height: 100px;
+                outline-offset: 5px;
+            }
+            .active 
+            {
+                background-color: var(--neon-color);
+            }
+            @media (max-width: 768px)
+            {
+                .content-columns
+                {
+                    column-count: 1;
+                }
+            }
+            .user-input:focus 
+            {
+                outline: 2px solid var(--neon-color);
+            }
+        </style>
+    </head>
+    <body>
+        <main class="archive-wrapper">
+            <h1>System Archives: Sector 7</h1>
+            <section class="content-columns">
+                <p>Historical data indicates a massive surge in neural activity across the outer sectors. Decryption protocols are currently engaged to bypass the ancient firewalls left behind by the architects.Historical data indicates a massive surge in neural activity across the outer sectors. Decryption protocols are currently engaged to bypass the ancient firewalls left behind by the architects.</p>
+            </section>
+            <div class="controls">
+                <textarea class="user-input" placeholder="Type status report here..."></textarea>
+            </div>
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+            </div>
+        </main>
+    </body>
+</html>
